@@ -10,11 +10,11 @@ import UIKit
 
 
 
-func swapTwoInts(_ a: inout Int, _ b: inout Int) {
+/*func swapTwoInts(_ a: inout Int, _ b: inout Int) {
     let temporaryA = a
     a = b
     b = temporaryA
-}
+}*/
 
 
 
@@ -26,11 +26,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        /*
         var x = 1
         var y = 5
         
         swapTwoInts(&x, &y)
         print("x 现在的值 \(x), y 现在的值 \(y)")
+        */
         
         /*
         let a:Int?=100
@@ -341,8 +343,101 @@ class ViewController: UIViewController {
         print(someDict1)
         print("someDict2 含有 \(someDict2.count) 个键值对")
         print(someDict2)*/
-    }
+        
+        
+        // 定义枚举
+        /*
+        enum DaysofaWeek {
+            case Sunday
+            case Monday
+            case TUESDAY
+            case WEDNESDAY
+            case THURSDAY
+            case FRIDAY
+            case Saturday
+        }
+        
+        var weekDay = DaysofaWeek.FRIDAY
+        weekDay = .Monday
+        switch weekDay
+        {
+        case .Sunday:
+            print("星期天")
+        case .Monday:
+            print("星期一")
+        case .TUESDAY:
+            print("星期二")
+        case .WEDNESDAY:
+            print("星期三")
+        case .THURSDAY:
+            print("星期四")
+        case .FRIDAY:
+            print("星期五")
+        case .Saturday:
+            print("星期六")
+        }
 
+        enum Student{
+            case Name(String)
+            case Mark(Int,Int,Int)
+        }
+        var studDetails = Student.Name("Runoob")
+        var studMarks = Student.Mark(98,97,95)
+        switch studMarks {
+        
+        case .Mark(let Mark1, let Mark2, let Mark3):
+            print("学生的成绩是: \(Mark1),\(Mark2),\(Mark3)。")
+        case .Name(let studName):
+            print("学生的名字是: \(studName)。")
+        }
+        
+        switch studDetails {
+            
+        case .Mark(let Mark1, let Mark2, let Mark3):
+            print("学生的成绩是: \(Mark1),\(Mark2),\(Mark3)。")
+        case .Name(let studName):
+            print("学生的名字是: \(studName)。")
+        }
+
+        struct MarksStruct {
+            var mark: Int
+            
+            init(mark: Int) {
+                self.mark = mark
+            }
+        }
+        var aStruct = MarksStruct(mark: 98)
+        var bStruct = aStruct // aStruct 和 bStruct 是使用相同值的结构体！
+        bStruct.mark = 97
+        print(aStruct.mark) // 98
+        print(bStruct.mark) // 97
+*/
+        struct markStruct{
+            var mark1: Int
+            var mark2: Int
+            var mark3: Int
+            
+            init(mark1: Int, mark2: Int, mark3: Int){
+                self.mark1 = mark1
+                self.mark2 = mark2
+                self.mark3 = mark3
+            }
+        }
+        
+        print("优异成绩:")
+        var marks = markStruct(mark1: 98, mark2: 96, mark3:100)
+        print(marks.mark1)
+        print(marks.mark2)
+        print(marks.mark3)
+        
+        print("糟糕成绩:")
+        var fail = markStruct(mark1: 34, mark2: 42, mark3: 13)
+        print(fail.mark1)
+        print(fail.mark2)
+        print(fail.mark3)
+
+    }
+ 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
